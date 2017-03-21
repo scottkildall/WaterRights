@@ -52,7 +52,7 @@ void waterRightsApp::setup(){
     canvasWidth = screenWidth * 2;
     canvasHeight = screenHeight * 2;
     
-    newMexicoMap.loadImage("newmexicobasins.jpg");
+    newMexicoMap.loadImage("water_basins_inverted.jpg");
     
     
 	numData = 0;
@@ -90,33 +90,10 @@ void waterRightsApp::draw(){
     ofSetColor( ofColor::white ) ;
     newMexicoMap.draw(0 - xAdjust,0 -yAdjust);
     
-    
-    // this is all OLD draw code with EPS output
-    
-    //we don't want to capture every frame
-	//so we only capture one frame when capture
-	//is set to true
-	
-	//do we want filled shapes or outlines?
-	//if(bFill)output.fill();
-;
+    return;
     
     
-
-    
-    /*
-    for( int i = 0; i < numData; i++ ) {
-        for( int j = 0; j < numData; j++ ) {
-            if( i != j && (data+i)->cnum == (data+j)->cnum ) {
-                //cout << "lines: " << "i = " << i << " j = " << j << " cnum = " << (data+i)->cnum;
-                //cout << endl;
-                ofSetHexColor(0xCCCCCC);
-
-                //output.line((data+i)->x, (data+i)->y, (data+j)->x, (data+j)->y );
-            }
-        }
-    }
-     */
+    // draws data (skip for now)
     
     for( int i = 0; i < numData; i++ ) {
          ofSetHexColor(0x000000);
@@ -124,33 +101,6 @@ void waterRightsApp::draw(){
         (data+i)->draw(-xAdjust, -yAdjust,gridSpacing);
      }
     
-
-	//we don't save this to eps - just info for the app
-//	ofFill();
-//	ofSetRectMode(OF_RECTMODE_CORNER);
-//	ofSetHexColor(0x000000);
-//	ofRect(60, 640, 220,100);
-//
-	//some text to explain whats what (uncommented for now)
-    /*
-	ofSetHexColor(0xDDDDDD);
-    char bitmapString[64];
-    sprintf(bitmapString,"Data points = %fmm", (float)(gridSpacing*10) );
-	ofDrawBitmapString(bitmapString, 75, 660);
-    
-    if( numData > 1 ) {
-        if( (data+0)->getShapeStyle() == SHAPE_STYLE_CIRCLE )
-            ofDrawBitmapString("Data Etch: Circles", 75, 680);
-        else if(  (data+0)->getShapeStyle() == SHAPE_STYLE_CIRCLE_LINES )
-            ofDrawBitmapString("Data Etch: Lines", 75, 680);
-        else if(  (data+0)->getShapeStyle() == SHAPE_STYLE_SPIRAL )
-            ofDrawBitmapString("Data Etch: spiral", 75, 680);
-        
-        
-
-        
-    }
-     */
 }
 
 //--------------------------------------------------------------
