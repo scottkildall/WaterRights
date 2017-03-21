@@ -1,11 +1,9 @@
-Strewn Field Map
+Water Rights
 ==================
 
 
-Maps Datasets for Water-jet etching
+Overhead projection of New Mexico Water Rights
 by Scott Kildall
 
-**Data** 
-Constainst datasets for etching
 
 # WaterRights
